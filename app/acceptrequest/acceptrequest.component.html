@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10 offset-lg-4 offset-md-3 offset-sm-2 offset-xs-1">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+                <fieldset>
+                        <h3 style="text-align: center; color:black" class="top-field">Accept Request</h3>
+                        <div class="form-group input-icons top-field">
+                            <label for ="quantity">Donation Quantity: </label>
+                            <input 
+                            type="number" 
+                            name="quantity" 
+                            id="quantity" 
+                            class="form-control input-field"
+                            placeholder="Quantity"
+                            ngModel
+                            required
+                            #quantity="ngModel">
+                            <small class="form-text" *ngIf="!quantity.valid && quantity.touched">Please enter the donation amount</small>
+                        </div>
+                            <button 
+                            type="submit" 
+                            class="btn col-sm-4 offset-sm-4 bottom-button"
+                            [disabled]="!f.valid">I Accept</button>    
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

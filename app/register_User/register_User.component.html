@@ -1,0 +1,106 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10 offset-lg-4 offset-md-3 offset-sm-2 offset-xs-1">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+                <fieldset>
+                        <h3 style="text-align: center; color:black" class="top-field">Sign up</h3>
+                        <div class="form-group input-icons top-field">
+                            <i class="fa fa-user icon"></i>
+                            <input 
+                            type="number" 
+                            name="employeeid" 
+                            id="employeeid" 
+                            class="form-control input-field"
+                            placeholder="Employee Id"
+                            ngModel
+                            required
+                            #employeeid="ngModel">
+                            <small class="form-text" *ngIf="!employeeid.valid && employeeid.touched">Please enter your Employee Id</small>
+                        </div>
+                        <div class="form-group input-icons">
+                                <i class="fa fa-user icon"></i>
+                                <input 
+                                type="text" 
+                                name="fullname" 
+                                id="fullname" 
+                                class="form-control input-field"
+                                placeholder="Full Name"
+                                ngModel
+                                required
+                                #fullname="ngModel">
+                                <small class="form-text" *ngIf="!fullname.valid && fullname.touched">Please enter your Full Name</small>
+                            </div>
+                            <div class="form-group input-icons">
+                                <i class="fa fa-mobile icon"></i>
+                                <input 
+                                type="number" 
+                                name="phonenumber" 
+                                id="phonenumber" 
+                                class="form-control input-field"
+                                placeholder="Mobile Number"
+                                ngModel
+                                required
+                                onkeydown="return (event.keyCode !== 69) 
+                                && 
+                                (event.keyCode !== 189)
+                                &&
+                                (event.keyCode !== 187)
+                                &&
+                                (event.keyCode !== 190)"
+                                #phonenumber="ngModel">
+                                <small class="form-text" *ngIf="!phonenumber.valid && phonenumber.touched">Please enter your Mobile Number</small>
+                            </div>
+                            <div class="form-group input-icons">
+                                    <i class="fa fa-envelope icon"></i>
+                                    <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    class="form-control input-field"
+                                    placeholder="Email"
+                                    ngModel
+                                    required
+                                    email
+                                    #email="ngModel">
+                                    <small class="form-text" *ngIf="!email.valid && email.touched">Please enter your Email</small>
+                                </div>
+                            <div class="form-group input-icons">
+                                <i class="fa fa-unlock icon"></i>
+                                <input 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                class="form-control input-field"
+                                placeholder="Password"
+                                ngModel
+                                required
+                                #password="ngModel">
+                                <small class="form-text" *ngIf="!password.valid && password.touched">Please enter your Password</small>
+                            </div>
+                            <div class="form-group input-icons">
+                                <i class="fa fa-user icon"></i>
+                                <input 
+                                type="date" 
+                                name="dob" 
+                                id="dob" 
+                                class="form-control input-field"
+                                placeholder="Date of Birth"
+                                ngModel
+                                required
+                                #dob="ngModel">
+                                <small class="form-text" *ngIf="!dob.valid && dob.touched">Please enter your Date of Birth</small>
+                            </div>
+                            <div class="form-group input-icons">
+                                <img [src] ="imageUrl" style="width: 250px; height: 200px">
+                               <input id="profilephoto" (change)="handleFileInput($event.target.files)" type="file" #Image accept="image/*">
+                            </div>
+                            <button 
+                            type="submit" 
+                            class="btn col-sm-4 offset-sm-4 bottom-button"
+                            [disabled]="!f.valid">Sign up</button>    
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
