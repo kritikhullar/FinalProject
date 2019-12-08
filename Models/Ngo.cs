@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace User_Donation.Models
 {
-    [Table("Users")]
-    public class User
+    [Table("Ngolist")]
+    public class Ngo
     {
         [Key]
         public int Id { get; set; }
-        public int Employee_Id { get; set; }
-        public string Employee_Name { get; set; }
+        public string Ngo_Id { get; set; }
+        public string Ngo_Location { get; set; }
+        public string Ngo_Name { get; set; }
         public double Mobile_number { get; set; }
         public string Email_id { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
-        public Nullable<System.DateTime> Date_of_Birth { get; set; }
-        public string Employee_Photo { get; set; }
+        public string Ngo_Certificate_Photo { get; set; }
+
+       public ICollection<Request> Requests { get; set; }
 
         public ICollection<Donation> Donations { get; set; }
 
     }
-
 }

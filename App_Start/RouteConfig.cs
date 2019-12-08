@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Donation
+namespace User_Donation
 {
     public class RouteConfig
     {
